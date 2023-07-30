@@ -6,14 +6,17 @@ import * as serviceWorker from "./serviceWorker";
 import { GithubProvider } from "./context/context";
 import { Auth0Provider } from "@auth0/auth0-react";
 
+//domain
+// dev-iumhw53x7g7gfk8g.us.auth0.com
+// client
+// Qxmw9bNODUgAZ8gy5ExtDsl4Kx14zuTU
+
 ReactDOM.render(
   <React.StrictMode>
     <Auth0Provider
-      domain="ddev-inlin7eroxxzpopy.us.auth0.com"
-      clientId="n4v3jaYH4ac3cl4KRZHnEaCzaOtLG34R"
-      redirectUri={window.location.origin}
-      cacheLocation="localstorage"
-    >
+      domain="dev-iumhw53x7g7gfk8g.us.auth0.com"
+      clientId="Qxmw9bNODUgAZ8gy5ExtDsl4Kx14zuTU"
+      redirectUri={window.location.origin}>
       <GithubProvider>
         <App />
       </GithubProvider>

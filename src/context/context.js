@@ -19,7 +19,7 @@ const GithubProvider = ({ children }) => {
   //error
   const [error, setError] = useState({ show: false, msg: "" });
 
-  const serachGithubUser = async (user) => {
+  const searchGithubUser = async (user) => {
     toggleError();
     setIsLoading(true);
     const response = await axios(`${rootUrl}/users/${user}`).catch((err) =>
@@ -54,6 +54,7 @@ const GithubProvider = ({ children }) => {
   const checkRequests = () => {
     axios(`${rootUrl}/rate_limit`)
       .then(({ data }) => {
+        // console.log("context data",data)
         let {
           rate: { remaining },
         } = data;
@@ -78,7 +79,7 @@ const GithubProvider = ({ children }) => {
         followers,
         requests,
         error,
-        serachGithubUser,
+        searchGithubUser,
         isLoading,
       }}
     >
